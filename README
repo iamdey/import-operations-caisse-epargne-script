@@ -1,0 +1,21 @@
+# Synchroniser ses comptes de la caisse d’epargne avec money ou équivalent
+
+Je suis un utilisateur de Grisbi le logiciel de comptabilité personnel et je suis un codeur flemmard alors j’ai créé un petit script permettant d’automatiser le téléchargement des opérations pour mon compte à la caisse d’épargne.
+Installation:
+
+Le script à besoin de php et notamment de :
+* php5-cli
+* php5-curl
+
+Renommez le fichier sample.settings.php en settings.php, puis éditez-le pour noter vos identifiants de connexion à l’interface web de la caisse d’épargne. Ensuite pour chaque compte ajoutez le numéro iban partiel.
+
+Lancez le script en ligne de commande : php app.php ou réalisez un cron pour lancer l’import de manière automatique.
+Fonctionnement :
+
+La caisse d’épargne limite le téléchargement de l’historique des transactions à 60 jours, il faut donc lancer ce script au minimum tous les 2 mois.
+
+Le script va faire toutes les opérations que l’on doit faire habituellement à la main et mémoriser la date du dernier import. Ensuite pour chaque compte il va enregistrer un fichier .qif ou .ofx que l’on pourra importer dans son logiciel de comptabilité.
+
+Changelog: 
+
+2011-11-5 import des operations d'un compte au format .qif
