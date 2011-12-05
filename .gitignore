@@ -1,1 +1,4 @@
 settings.php
+.cookie
+*.qif
+.last_import.*
